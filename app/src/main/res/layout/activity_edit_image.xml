@@ -36,7 +36,23 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_14ssp"
             android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_save"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:src="@drawable/icon_done"
+            app:tint="@color/white" />
+
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view_filters"
+        app:layout_constraintTop_toBottomOf="@id/header_layout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_filters"
