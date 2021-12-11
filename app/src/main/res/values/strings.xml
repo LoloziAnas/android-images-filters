@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Filter Me</string>
+    <string name="save_images">Save Images</string>
+    <string name="edit_new_images">Edit New Images</string>
+    <string name="let_s_create_some_magic">Let\'s create some magic</string>
+    <string name="filters_me">Filters Me</string>
 </resources>
