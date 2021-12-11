@@ -46,9 +46,8 @@ dependencies {
     // Scalable Size Unit
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
-
     //Rounded Image View
-    implementation 'com.makeraman:roundedImageView:2.3.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
     // GPU Image
     implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
     // Koin dependency Injection lib
