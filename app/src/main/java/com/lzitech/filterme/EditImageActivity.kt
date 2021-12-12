@@ -25,7 +25,9 @@ class EditImageActivity : AppCompatActivity() {
             binding.imagePreview.visibility = View.VISIBLE
         }
     }
+    private fun initRecyclerView(){
 
+    }
     private fun setListeners() {
         binding.imageBack.setOnClickListener {
             onBackPressed()
