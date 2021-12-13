@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".utilities.AppConfig"
         android:theme="@style/Theme.FilterMe">
         <activity
             android:name=".activities.editImage.EditImageActivity"
