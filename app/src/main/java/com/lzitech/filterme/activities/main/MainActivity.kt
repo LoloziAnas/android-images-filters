@@ -1,4 +1,4 @@
-package com.lzitech.filterme
+package com.lzitech.filterme.activities.main
 
 import android.app.Activity
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.lzitech.filterme.activities.editImage.EditImageActivity
 import com.lzitech.filterme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

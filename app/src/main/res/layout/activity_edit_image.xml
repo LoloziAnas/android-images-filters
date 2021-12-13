@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".EditImageActivity">
+    tools:context=".activities.editImage.EditImageActivity">
 
     <LinearLayout
         android:id="@+id/header_layout"
