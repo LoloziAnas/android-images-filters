@@ -18,6 +18,7 @@
         app:riv_corner_radius="@dimen/_8sdp" />
 
     <TextView
+        android:id="@+id/text_filter_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_4sdp"

@@ -80,4 +80,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_container_filters" />
 
+    <ProgressBar
+        android:id="@+id/progress_image_filters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_bar_background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_view_filters"
+        app:layout_constraintEnd_toEndOf="@+id/recycler_view_filters"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view_filters"
+        app:layout_constraintTop_toTopOf="@+id/recycler_view_filters" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
