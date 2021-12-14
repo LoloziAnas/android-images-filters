@@ -35,7 +35,7 @@ class EditImageViewModel(private val editImageRepository: EditImageRepository) :
         error: String? = null
     ) {
         val dataState = ImagePreviewDataStore(isLoading, bitmap, error)
-        imagePreviewDataStore.value = dataState
+        imagePreviewDataStore.postValue(dataState)
     }
 
     data class ImagePreviewDataStore(
