@@ -5,10 +5,12 @@ import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.lzitech.filterme.data.ImageFilter
 import com.lzitech.filterme.repositories.EditImageRepository
 import com.lzitech.filterme.utilities.Coroutines
 
 class EditImageViewModel(private val editImageRepository: EditImageRepository) : ViewModel() {
+    // region:: Prepare Image Preview
     private val imagePreviewDataStore = MutableLiveData<ImagePreviewDataStore>()
     val imagePreviewUiState: LiveData<ImagePreviewDataStore> get() = imagePreviewDataStore
 
@@ -43,4 +45,47 @@ class EditImageViewModel(private val editImageRepository: EditImageRepository) :
         val bitmap: Bitmap?,
         val error: String?,
     )
+
+    // endregion
+
+    // region:: Load Image Filters
+    private val imageFiltersDataState = MutableLiveData<ImageFiltersDataState>()
+    val imageFiltersUiState: LiveData<ImageFiltersDataState> get() = imageFiltersUiState
+
+    private fun getImagePreview(originalImage: Bitmap): Bitmap {
+        return runCatching {
+            val previewWidth = 150
+            val previewHeight = originalImage.height * previewWidth / originalImage.width
+            Bitmap.createScaledBitmap(originalImage, previewWidth, previewHeight, false)
+        }.getOrDefault(originalImage)
+    }
+
+    private fun loadImageFilters(originalImage: Bitmap) {
+        Coroutines.io {
+            runCatching {
+                emitImageFiltersUiState(isLoading = true)
+                editImageRepository.getImageFilters(getImagePreview(originalImage))
+            }.onSuccess { imageFilters ->
+                emitImageFiltersUiState(imageFilters = imageFilters)
+            }.onFailure {
+                emitImageFiltersUiState(error = it.message.toString())
+            }
+        }
+    }
+
+    private fun emitImageFiltersUiState(
+        isLoading: Boolean = false,
+        imageFilters: List<ImageFilter>? = null,
+        error: String? = null
+    ) {
+        val dataState = ImageFiltersDataState(isLoading, imageFilters, error)
+        imageFiltersDataState.postValue(dataState)
+    }
+
+    data class ImageFiltersDataState(
+        val isLoading: Boolean,
+        val imageFilters: List<ImageFilter>?,
+        val error: String?
+    )
+    //endregion
 }

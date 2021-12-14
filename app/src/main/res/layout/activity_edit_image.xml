@@ -26,7 +26,7 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_22sdp"
             android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:layout_weight="1"
@@ -34,7 +34,7 @@
             android:includeFontPadding="false"
             android:text="@string/apply_filter"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_15ssp"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -54,6 +54,18 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/recycler_view_filters"
         app:layout_constraintTop_toBottomOf="@id/header_layout" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_bar_background"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/image_preview"
+        app:layout_constraintEnd_toEndOf="@+id/image_preview"
+        app:layout_constraintStart_toStartOf="@+id/image_preview"
+        app:layout_constraintTop_toTopOf="@+id/image_preview" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_filters"
