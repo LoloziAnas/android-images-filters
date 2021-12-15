@@ -60,7 +60,7 @@ class EditImageViewModel(private val editImageRepository: EditImageRepository) :
         }.getOrDefault(originalImage)
     }
 
-    private fun loadImageFilters(originalImage: Bitmap) {
+     fun loadImageFilters(originalImage: Bitmap) {
         Coroutines.io {
             runCatching {
                 emitImageFiltersUiState(isLoading = true)
