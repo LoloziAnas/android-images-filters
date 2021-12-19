@@ -50,7 +50,7 @@ class EditImageViewModel(private val editImageRepository: EditImageRepository) :
 
     // region:: Load Image Filters
     private val imageFiltersDataState = MutableLiveData<ImageFiltersDataState>()
-    val imageFiltersUiState: LiveData<ImageFiltersDataState> get() = imageFiltersUiState
+    val imageFiltersUiState: LiveData<ImageFiltersDataState> get() = imageFiltersDataState
 
     private fun getImagePreview(originalImage: Bitmap): Bitmap {
         return runCatching {
