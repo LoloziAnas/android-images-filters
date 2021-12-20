@@ -14,14 +14,14 @@
         android:background="@color/primary"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:padding="@dimen/_8sdp"
+        android:padding="@dimen/_10sdp"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_back"
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
-            android:src="@drawable/icon_back"
+            android:src="@drawable/ic_back"
             app:tint="@color/white" />
 
         <TextView
@@ -37,12 +37,24 @@
             android:textSize="@dimen/_15ssp"
             android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_save"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
-            android:src="@drawable/icon_done"
-            app:tint="@color/white" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_save"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:src="@drawable/ic_done"
+                app:tint="@color/white" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_saving"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:visibility="gone" />
+        </FrameLayout>
+
 
     </LinearLayout>
 

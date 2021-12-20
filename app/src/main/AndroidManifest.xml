@@ -3,13 +3,16 @@
     package="com.lzitech.filterme">
 
     <application
+        android:name=".utilities.AppConfig"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".utilities.AppConfig"
         android:theme="@style/Theme.FilterMe">
+        <activity
+            android:name=".activities.filteredImage.FilteredImageActivity"
+            android:exported="true" />
         <activity
             android:name=".activities.editImage.EditImageActivity"
             android:exported="true" />
@@ -23,6 +26,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_path" />
+        </provider>
     </application>
 
 </manifest>
