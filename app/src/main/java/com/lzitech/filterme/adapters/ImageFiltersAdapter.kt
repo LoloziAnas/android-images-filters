@@ -5,8 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lzitech.filterme.data.ImageFilter
 import com.lzitech.filterme.databinding.ItemContainerFiltersBinding
+import com.lzitech.filterme.listeners.ImageFiltersListener
 
-class ImageFiltersAdapter(private val imageFilters: List<ImageFilter>) :
+class ImageFiltersAdapter(
+    private val imageFilters: List<ImageFilter>,
+    private val imageFiltersListener: ImageFiltersListener
+) :
     RecyclerView.Adapter<ImageFiltersAdapter.ImageFiltersViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageFiltersViewHolder {
@@ -20,6 +24,9 @@ class ImageFiltersAdapter(private val imageFilters: List<ImageFilter>) :
             with(imageFilters[position]) {
                 binding.imageFilterPreview.setImageBitmap(filterPreview)
                 binding.textFilterName.text = name
+                binding.root.setOnClickListener{
+                    imageFiltersListener.onFilterSelected(this)
+                }
             }
         }
     }
