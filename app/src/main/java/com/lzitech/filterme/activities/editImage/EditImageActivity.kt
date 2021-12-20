@@ -96,6 +96,15 @@ class EditImageActivity : AppCompatActivity(), ImageFiltersListener {
         binding.imageBack.setOnClickListener {
             onBackPressed()
         }
+        // this will show original image when the user clicks a long click the imageView until we release click,
+        // So that the user can see the difference between the original image and the filtered image
+        binding.imagePreview.setOnLongClickListener {
+            binding.imagePreview.setImageBitmap(originalBitmap)
+            return@setOnLongClickListener false
+        }
+        binding.imagePreview.setOnClickListener {
+            binding.imagePreview.setImageBitmap(filteredBitmap.value)
+        }
     }
 
     override fun onFilterSelected(filterImage: ImageFilter) {
