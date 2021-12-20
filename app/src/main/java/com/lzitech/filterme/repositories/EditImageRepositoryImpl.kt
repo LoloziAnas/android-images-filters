@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import com.lzitech.filterme.data.ImageFilter
 import jp.co.cyberagent.android.gpuimage.GPUImage
-import jp.co.cyberagent.android.gpuimage.filter.GPUImageSepiaToneFilter
+import jp.co.cyberagent.android.gpuimage.filter.*
 import java.io.InputStream
 
 class EditImageRepositoryImpl(private val context: Context) : EditImageRepository {
@@ -17,10 +17,28 @@ class EditImageRepositoryImpl(private val context: Context) : EditImageRepositor
         }
         val imageFilters: ArrayList<ImageFilter> = ArrayList()
         // region:: Image Filters
+
         GPUImageSepiaToneFilter().also { filter ->
             gpuImage.setFilter(filter)
             imageFilters.add(ImageFilter("sepia", filter, gpuImage.bitmapWithFilterApplied))
         }
+        GPUImageAddBlendFilter().also { filter ->
+            gpuImage.setFilter(filter)
+            imageFilters.add(ImageFilter("blend", filter, gpuImage.bitmapWithFilterApplied))
+        }
+        GPUImageBilateralBlurFilter().also { filter ->
+            gpuImage.setFilter(filter)
+            imageFilters.add(ImageFilter("blur", filter, gpuImage.bitmapWithFilterApplied))
+        }
+        GPUImageBoxBlurFilter().also { filter ->
+            gpuImage.setFilter(filter)
+            imageFilters.add(ImageFilter("box blur", filter, gpuImage.bitmapWithFilterApplied))
+        }
+        GPUImageBrightnessFilter().also { filter ->
+            gpuImage.setFilter(filter)
+            imageFilters.add(ImageFilter("brightness", filter, gpuImage.bitmapWithFilterApplied))
+        }
+
         // endregion
 
         return imageFilters
