@@ -7,6 +7,7 @@ import android.provider.MediaStore
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.lzitech.filterme.activities.editImage.EditImageActivity
+import com.lzitech.filterme.activities.savedImage.SavedImageActivity
 import com.lzitech.filterme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -46,6 +47,11 @@ class MainActivity : AppCompatActivity() {
             ).also { pickerIntent ->
                 pickerIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 resultLauncher.launch(pickerIntent)
+            }
+        }
+        binding.buttonSaveImages.setOnClickListener {
+            Intent(applicationContext, SavedImageActivity::class.java).also { intent ->
+                startActivity(intent)
             }
         }
     }
