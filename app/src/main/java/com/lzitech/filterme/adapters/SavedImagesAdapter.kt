@@ -5,9 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lzitech.filterme.databinding.ItemContainerSavedImagesBinding
+import com.lzitech.filterme.listeners.SavedImagesListener
 import java.io.File
 
-class SavedImagesAdapter(val savedImages: List<Pair<File, Bitmap>>) :
+class SavedImagesAdapter(
+    private val savedImages: List<Pair<File, Bitmap>>,
+    private val savedImagesListener: SavedImagesListener
+) :
     RecyclerView.Adapter<SavedImagesAdapter.SavedImageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SavedImageViewHolder {
@@ -23,6 +27,9 @@ class SavedImagesAdapter(val savedImages: List<Pair<File, Bitmap>>) :
         with(holder) {
             with(savedImages[position]) {
                 binding.imageViewSaved.setImageBitmap(second)
+                binding.imageViewSaved.setOnClickListener {
+                    savedImagesListener.onImageClick(first)
+                }
             }
         }
     }
