@@ -3,6 +3,7 @@ package com.lzitech.filterme.activities.savedImage
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.lzitech.filterme.adapters.SavedImagesAdapter
 import com.lzitech.filterme.databinding.ActivitySavedImageBinding
 import com.lzitech.filterme.utilities.displayToast
 import com.lzitech.filterme.viewModels.SavedImageViewModel
@@ -28,7 +29,12 @@ class SavedImageActivity : AppCompatActivity() {
             binding.progressBar.visibility =
                 if (savedImageDataState.isLoading) View.VISIBLE else View.GONE
             savedImageDataState.savedImages?.let { savedImages ->
-                displayToast("${savedImages.size} loaded images")
+                SavedImagesAdapter(savedImages).also { adapter ->
+                    with(binding.recyclerViewSavedImages) {
+                        this.adapter = adapter
+                        visibility = View.VISIBLE
+                    }
+                }
             } ?: run {
                 savedImageDataState.error?.let { error ->
                     displayToast(error)
