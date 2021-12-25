@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--App color-->
-    <color name="primary">#77A7EF</color>
-    <color name="primaryDark">#498AEA</color>
+    <color name="primary">#7b1fa2</color>
+    <color name="primaryDark">#4a0072</color>
     <color name="secondary">#FEEAA5</color>
     <color name="primaryText">#212121</color>
     <color name="secondaryText">#757575</color>
