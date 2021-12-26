@@ -42,6 +42,14 @@ class EditImageRepositoryImpl(private val context: Context) : EditImageRepositor
             gpuImage.setFilter(filter)
             imageFilters.add(ImageFilter("brightness", filter, gpuImage.bitmapWithFilterApplied))
         }
+        GPUImageBulgeDistortionFilter().also { filter ->
+            gpuImage.setFilter(filter)
+            imageFilters.add(ImageFilter("bulge distoration", filter, gpuImage.bitmapWithFilterApplied))
+        }
+        GPUImageCGAColorspaceFilter().also { filter ->
+            gpuImage.setFilter(filter)
+            imageFilters.add(ImageFilter("CGA colors", filter, gpuImage.bitmapWithFilterApplied))
+        }
 
         // endregion
 
