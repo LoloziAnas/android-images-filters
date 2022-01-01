@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.makeramen.roundedimageview.RoundedImageView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/image_view_saved"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_6sdp"
-    android:adjustViewBounds="true"
-    app:riv_corner_radius="@dimen/_6sdp" />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image_view_saved"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_6sdp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/image_holder_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/_6sdp" />
+
+    <ImageView
+        android:id="@+id/image_view_delete"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_delete"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_saved"
+        app:layout_constraintStart_toEndOf="@+id/image_view_saved"
+        app:layout_constraintTop_toTopOf="@id/image_view_saved"
+        app:tint="@android:color/holo_red_light" />
+</androidx.constraintlayout.widget.ConstraintLayout>

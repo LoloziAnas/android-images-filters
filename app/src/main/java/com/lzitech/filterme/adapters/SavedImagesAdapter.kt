@@ -30,6 +30,9 @@ class SavedImagesAdapter(
                 binding.imageViewSaved.setOnClickListener {
                     savedImagesListener.onImageClick(first)
                 }
+                /* binding.imageViewSaved.setOnLongClickListener {
+                     savedImagesListener.onDeleteImageClick(first)
+                 }*/
             }
         }
     }

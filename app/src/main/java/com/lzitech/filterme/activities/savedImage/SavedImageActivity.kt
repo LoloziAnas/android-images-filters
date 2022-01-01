@@ -53,14 +53,22 @@ class SavedImageActivity : AppCompatActivity(), SavedImagesListener {
         binding.imageBack.setOnClickListener {
             onBackPressed()
         }
+
     }
+
 
     override fun onImageClick(file: File) {
         val fileUri =
             FileProvider.getUriForFile(applicationContext, "${packageName}.provider", file)
-        Intent(applicationContext, FilteredImageActivity::class.java).also {
-            filteredIntent -> filteredIntent.putExtra(EditImageActivity.FILTERED_IMAGE_URI_KEY, fileUri)
+        Intent(applicationContext, FilteredImageActivity::class.java).also { filteredIntent ->
+            filteredIntent.putExtra(EditImageActivity.FILTERED_IMAGE_URI_KEY, fileUri)
             startActivity(filteredIntent)
+        }
+    }
+
+    override fun onDeleteImageClick(file: File) {
+        if (file.exists()) {
+            file.canonicalFile.delete()
         }
     }
 }
