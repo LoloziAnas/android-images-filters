@@ -17,5 +17,10 @@ Android application for image filter developed by Kotlin using MVVM Architecture
 ### Video
 Here is the link to view a video demonstrating the app: [Click here](https://www.youtube.com/watch?v=G9U5nWYtQwM)
 ### Screenshots
+<img src="https://github.com/LoloziAnas/android-images-filters/blob/main/screenshots/1.jpg" width="235" height="493">  
+<img src="https://github.com/LoloziAnas/android-images-filters/blob/main/screenshots/2.jpg"  width="235" height="493"> 
+<img src="https://github.com/LoloziAnas/android-images-filters/blob/main/screenshots/3.jpg"  width="235" height="493">
+<img src="https://github.com/LoloziAnas/android-images-filters/blob/main/screenshots/4.jpg"  width="235" height="493">  
+
 ### License
 MIT License, see the [LICENSE](LICENSE) file.
