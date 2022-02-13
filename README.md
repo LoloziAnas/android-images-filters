@@ -15,7 +15,7 @@ Android application for image filter developed by Kotlin using MVVM Architecture
 - [GPUImage for Android](https://github.com/cats-oss/android-gpuimage)
 - [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
 ### Video
-Here is the link to view a video demonstrating the app: [Click here](https://www.youtube.com/watch?v=G9U5nWYtQwM)
+Here is the link to view a video demonstrating the app: [Click here](https://www.youtube.com/)
 ### Screenshots
 <img src="https://github.com/LoloziAnas/android-images-filters/blob/main/screenshots/1.jpg" width="235" height="493">  <img src="https://github.com/LoloziAnas/android-images-filters/blob/main/screenshots/2.jpg"  width="235" height="493"> <img src="https://github.com/LoloziAnas/android-images-filters/blob/main/screenshots/3.jpg"  width="235" height="493">  <img src="https://github.com/LoloziAnas/android-images-filters/blob/main/screenshots/4.jpg"  width="235" height="493">  
 
